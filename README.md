@@ -2,6 +2,8 @@
 
 In this project, I developed an automated data pipeline that extracts daily song information from Spotify's "Top 50 Tracks" playlist. Using an ETL (Extract, Transform, Load) script, the process fetches song data, processes it into a structured pandas DataFrame, and then deposits it into an AWS S3 bucket as a dated `.csv` file. To ensure the ETL process is executed seamlessly on a daily basis, I employed Apache Airflow, orchestrating a Directed Acyclic Graph (DAG) that dictates the task sequence. This entire operation is hosted on an AWS EC2 instance running the Ubuntu operating system. To enable interaction with the AWS S3 bucket, I configured the EC2 permissions using IAM roles, ensuring our server can both read from and write to the storage bucket. As a result, this setup offers a robust and automated solution, capturing a daily snapshot of Spotify's trending tracks and preserving them systematically in a central data repository.
 
+![Temp](https://github.com/chrisxj33/Spotify-ETL-Pipeline/assets/53899548/712b171e-8bec-45a4-a93e-58ce6e4ae638)
+
 ### ETL Script
 
 This script is an ETL process that extracts songs from the “Top 50 Tracks” playlist from Spotify, processes the data, and saves it to a specified AWS S3 bucket as a CSV file.
@@ -84,8 +86,9 @@ To update the changes use control + c to suspend Airflow, then use `airflow stan
 
 Below is how the data looks within the S3 Bucket. A new file is created for each daily snapshot.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e5ef6927-60ce-47b9-8262-bfee6996f559/Untitled.png)
+![Untitled (1)](https://github.com/chrisxj33/Spotify-ETL-Pipeline/assets/53899548/6f290e53-0325-4a73-8e29-f5a6b406f2c4)
 
-A couple of from from the `.csv` file showing the structure. Each row corresponds to a single song. This data is ready to be normalised and appended into a database.
+A couple of lines from from the `.csv` file showing the structure. Each row corresponds to a single song. This data is ready to be normalised and appended into a database for analysis.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2af5e9b9-3140-47c3-b8d0-539b24bc0c1c/Untitled.png)
+![Untitled](https://github.com/chrisxj33/Spotify-ETL-Pipeline/assets/53899548/66d55c23-bad2-4cf1-8e32-b803637d2448)
+
