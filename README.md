@@ -14,7 +14,7 @@ This script is an ETL process that extracts songs from the “Top 50 Tracks” p
 
 ### Airflow Script
 
-This script is used to create and schedule an Apache Airflow Directed Acyclic Graph (DAG) to automate the ETL process. The airflow script essentially calls the function defined in the script previously created, `spotify_etl.py`. The Airflow script also defines the order of the tasks to be carried out.
+This script is used to create and schedule an Apache Airflow Directed Acyclic Graph (DAG) to automate the ETL process. The airflow script essentially calls the function defined in the script previously created, `spotify_etl.py`.
 
 ### Launching an EC2 Instance
 
