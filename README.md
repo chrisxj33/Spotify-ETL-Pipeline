@@ -1,5 +1,7 @@
 ### Overview
 
+The over-all aim of this project was to introduce to myself to some applications of Data Engineering and creating data pipelines within cloud computing resources.
+
 In this project, I developed an automated data pipeline that extracts daily song information from Spotify's "Top 50 Tracks" playlist. Using an ETL (Extract, Transform, Load) script, the process fetches song data, processes it into a structured pandas DataFrame, and then deposits it into an AWS S3 bucket as a dated `.csv` file. To ensure the ETL process is executed seamlessly on a daily basis, I employed Apache Airflow, orchestrating a Directed Acyclic Graph (DAG) that dictates the task sequence. This entire operation is hosted on an AWS EC2 instance running the Ubuntu operating system. To enable interaction with the AWS S3 bucket, I configured the EC2 permissions using IAM roles, ensuring our server can both read from and write to the storage bucket. As a result, this setup offers a robust and automated solution, capturing a daily snapshot of Spotify's trending tracks and preserving them systematically in a central data repository.
 
 ![Temp](https://github.com/chrisxj33/Spotify-ETL-Pipeline/assets/53899548/712b171e-8bec-45a4-a93e-58ce6e4ae638)
